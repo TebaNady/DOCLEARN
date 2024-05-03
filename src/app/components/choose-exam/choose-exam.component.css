@@ -1,0 +1,115 @@
+/* Styles for container */
+.container {
+  margin-top: 100px;
+  padding-top: 50px;
+  /* Adjust as needed to keep content away from the navbar */
+
+}
+
+/* Styles for titles */
+h2,
+h4 {
+  text-align: center;
+  /* Center align all h2 and h4 elements */
+  color: black;
+  /* Text color */
+}
+
+/* Styles for input */
+.search-engine input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: black;
+  border-radius: 5px;
+}
+
+/* Styles for list items */
+.list-of-titles {
+  list-style: none;
+  padding: 0;
+}
+
+.list-of-titles li {
+  padding: 10px;
+  color: black;
+  /* Text color */
+  transition: background-color 0.3s ease;
+  /* Smooth hover transition */
+}
+
+.list-of-titles li:hover {
+  background-color: #0B8FAC;
+  color: #fff;
+  /* Hover background color */
+}
+
+/* Styles for buttons */
+.custom-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0B8FAC;
+  /* Button color */
+  color: black;
+  /* Text color */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Smooth hover transition */
+  position: absolute;
+  bottom: 0px;
+
+}
+
+.custom-button:hover {
+  background-color: #0B8FAC;
+  color: #fff;
+  /* Hover button color */
+}
+
+/* Styles for border divs */
+.border-div {
+  border: 2px solid black;
+  /* Border color */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply animation to border-div */
+.border-div {
+  animation: fadeIn 1s forwards;
+}
+
+.zoom-effect {
+  border: gray 1px solid;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  height: 150px;
+  transition: transform 0.3s ease;
+  /* Apply smooth transition */
+  position: relative;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.2);
+  /* Zoom out effect on hover */
+  cursor: pointer;
+}
+
+.title-container {
+  text-align: center;
+  margin-top: 35px;
+}

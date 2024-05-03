@@ -1,0 +1,86 @@
+.payment-container {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  /* Light gray background */
+}
+.container{
+  margin-top: 100px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  /* Dark gray text */
+}
+
+input[type="number"],
+input[type="text"] {
+  width: calc(100% - 30px);
+  /* Adjusted width to accommodate icons */
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.payment-div {
+  display: grid;
+  place-items: center;
+}
+
+/* Icon styling */
+.fa-dollar-sign,
+.fa-money-bill,
+.fa-comment-alt,
+.fa-paypal {
+  margin-right: 10px;
+}
+
+.btn-paypal {
+  background-color: #ffc439;
+  /* PayPal yellow */
+  border-color: #ffc439;
+  color: #003087;
+  /* PayPal blue */
+}
+
+.btn-paypal:hover {
+  background-color: #ffdb6b;
+  /* Lighter yellow on hover */
+  border-color: #ffdb6b;
+  color: #003087;
+  /* PayPal blue */
+}
+
+.btn-paypal:focus,
+.btn-paypal.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 196, 57, 0.5);
+  /* Yellow shadow on focus */
+}
+
+.card-title {
+  text-align: center;
+  /* Center align the text */
+  margin-bottom: 20px;
+  /* Add some bottom margin for spacing */
+}
+
+.spec-btn{
+  background-color: #ffffff;
+  border: gray 1px solid;
+  
+}
+.spec-btn:hover{
+  background-color: #0B8FAC;
+  color: #fff;
+}

@@ -1,0 +1,41 @@
+<div *ngIf="payError" class="container mb-5">
+    <p class="text-danger">*Please make sure that you paid the exam fees</p>
+    <p class="text-danger">*الرجاء دفع مصاريف الامتحان</p>
+    <button (click)="redirectToPayment()" class="btn btn-primary">Pay Exam Fees</button>
+</div>
+<div *ngIf="!payError" class="container mb-5">
+    <p class="text-danger">*Please note that when you answer the question and click next you can't go back</p>
+    <p class="text-danger">*تنويه هام: في حالة انتقالك للصفحة التالية لا يمكنك العودة للأسئلة مرة أخرى لذا لا تترك
+        السؤال وتأكد من إجابتك</p>
+    <div *ngIf="!isLoading">
+        <div class="question-card" *ngFor="let question of getCurrentPageQuestions(); let i = index">
+            <h2>Question {{ i + 1 + (currentPage * pageSize) }}</h2>
+            <h5>{{ question.Question }}</h5>
+            <ul>
+                <li *ngFor="let option of question.options">
+                    <input type="radio" name="question{{ i }}" value="{{ option }}"
+                        (change)="checkAnswer(question, option)" [disabled]="question.selectedAnswer">
+                    {{ option }}
+                </li>
+            </ul>
+            <div *ngIf="question.selectedAnswer === question.Answer" class="correct-answer">&#x2714;</div>
+            <div *ngIf="question.selectedAnswer !== question.Answer && question.selectedAnswer" class="wrong-answer">
+                &#x2718;</div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button class="btn" (click)="nextPage()" [disabled]="currentPage === totalPages - 1">Next</button>
+            <button class="btn submit-btn" (click)="showResult()">Submit</button>
+        </div>
+    </div>
+    <div class="popup-overlay" [class.open]="isPopupOpen">
+        <div class="popup-content">
+            <h3>{{message}}</h3>
+            <button class="btn btn-danger text-center" (click)="closePopup()">Close</button>
+        </div>
+    </div>
+</div>
+<div class="loading-indicator text-center" style="font-size: large;" *ngIf="isLoading && !payError">
+    <!-- <i class="fa fa-spinner fa-spin"></i> <br> Loading... -->
+    <img src="../../../assets/images/1_Gvgic29bgoiGVLmI6AVbUg.gif" width="150px">
+</div>

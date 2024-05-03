@@ -1,0 +1,49 @@
+.container{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+.youtube-page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .video-container {
+    border: 8px solid #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .youtube-links {
+    margin-top: 20px;
+  }
+  
+  .youtube-links h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .youtube-links ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .youtube-links ul li {
+    margin-bottom: 10px;
+  }
+  
+  .youtube-links ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+  }
+  
+  .youtube-links ul li a:hover {
+    background-color: #e0e0e0;
+  }
+  

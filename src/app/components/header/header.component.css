@@ -1,0 +1,9 @@
+.spec-btn{
+    background-color: #ffffff;
+    border: gray 1px solid;
+    margin-right: 4px;
+}
+.spec-btn:hover{
+    background-color: #0B8FAC;
+    color: #fff;
+}

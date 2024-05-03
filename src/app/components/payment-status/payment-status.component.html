@@ -1,0 +1,20 @@
+<div style="color: black; margin: 100px;">
+  <div *ngIf="!dataReceived">
+    <p>No transaction data received.</p>
+    <!-- You can customize this message further -->
+  </div>
+  <div *ngIf="transactionData">
+    <div *ngIf="transactionData">
+      <div *ngIf="transactionData.success == 'true'">
+        <p>Payment successful!</p>
+        <button class="btn btn-primary" (click)="navigateToExam()">Go to Exam</button>
+      </div>
+      <div *ngIf="transactionData.success == 'false'">
+        <p>Payment failed. Please try again.</p>
+        <button class="btn btn-primary" (click)="navigateToPayment()">Try Payment Again</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

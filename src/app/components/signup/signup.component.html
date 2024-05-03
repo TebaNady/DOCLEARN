@@ -1,0 +1,121 @@
+<div class="overall-container">
+  <div class="register-container">
+      <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+              <label for="id" class="form-label">ID</label>
+              <input type="text" class="form-control" id="id" formControlName="id">
+              <div class="form-text text-danger"
+                  *ngIf="registerForm.get('id')?.invalid && (registerForm.get('id')?.dirty || registerForm.get('id')?.touched)">
+                  <p *ngIf="registerForm.get('id')?.errors?.['required']">Please enter your ID</p>
+                  <p *ngIf="registerForm.get('id')?.errors?.['pattern']">ID must consist of 14 digits</p>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" formControlName="firstName">
+              <div class="text-danger"
+                  *ngIf="registerForm.get('firstName')?.invalid && (registerForm.get('firstName')?.dirty || registerForm.get('firstName')?.touched)">
+                  <p *ngIf="registerForm.get('firstName')?.errors?.['required']">First Name is required</p>
+                  <p *ngIf="registerForm.get('firstName')?.errors?.['minlength'] || registerForm.get('firstName')?.errors?.['maxlength']">First Name must be between 3 and 20 characters</p>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" formControlName="lastName">
+              <div class="text-danger"
+                  *ngIf="registerForm.get('lastName')?.invalid && (registerForm.get('lastName')?.dirty || registerForm.get('lastName')?.touched)">
+                  <p *ngIf="registerForm.get('lastName')?.errors?.['required']">Last Name is required</p>
+                  <p *ngIf="registerForm.get('lastName')?.errors?.['minlength'] || registerForm.get('lastName')?.errors?.['maxlength']">Last Name must be between 3 and 20 characters</p>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password">
+              <div class="text-danger"
+                  *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+                  <p *ngIf="registerForm.get('password')?.errors?.['required']">Password is required</p>
+                  <p *ngIf="registerForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long</p>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="text" class="form-control" id="phone" formControlName="phone">
+              <div class="text-danger"
+                  *ngIf="registerForm.get('phone')?.invalid && (registerForm.get('phone')?.dirty || registerForm.get('phone')?.touched)">
+                  <p *ngIf="registerForm.get('phone')?.errors?.['required']">Phone is required</p>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email">
+              <div class="text-danger"
+                  *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+                  <p *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</p>
+                  <p *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format</p>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="year" class="form-label">Year</label>
+              <select class="form-select" id="year" formControlName="year">
+                  <option value="" disabled selected>Select year</option>
+                  <option value="First year">First year</option>
+                  <option value="Second year">Second year</option>
+                  <option value="Third year">Third year</option>
+                  <option value="Fourth year">Fourth year</option>
+                  <option value="Fifth year">Fifth year</option>
+              </select>
+              <div class="text-danger"
+                  *ngIf="registerForm.get('year')?.invalid && (registerForm.get('year')?.dirty || registerForm.get('year')?.touched)">
+                  <p *ngIf="registerForm.get('year')?.errors?.['required']">Year is required</p>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="university" class="form-label">University</label>
+              <select class="form-select" id="university" formControlName="university">
+                  <option value="" disabled selected>Select university</option>
+                  <option value="Nahda University">Nahda University</option>
+                  <option value="Beni Suef University">Beni Suef University</option>
+                  <option value="Beni Suef National University">Beni Suef National University</option>
+                  <option value="Kasr Al Ainy">Kasr Al Ainy</option>
+                  <option value="Fayoum University">Fayoum University</option>
+              </select>
+              <div class="text-danger"
+                  *ngIf="registerForm.get('university')?.invalid && (registerForm.get('university')?.dirty || registerForm.get('university')?.touched)">
+                  <p *ngIf="registerForm.get('university')?.errors?.['required']">University is required</p>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="faculty" class="form-label">Faculty</label>
+              <select class="form-select" id="faculty" formControlName="faculty">
+                  <option value="" disabled selected>Select faculty</option>
+                  <option value="Faculty of Medicine">Faculty of Medicine</option>
+              </select>
+              <div class="text-danger"
+                  *ngIf="registerForm.get('faculty')?.invalid && (registerForm.get('faculty')?.dirty || registerForm.get('faculty')?.touched)">
+                  <p *ngIf="registerForm.get('faculty')?.errors?.['required']">Faculty is required</p>
+              </div>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="agreeToTerms" formControlName="agreeToTerms" required>
+            <label class="form-check-label" for="agreeToTerms">I agree to the terms and conditions</label>
+            <!-- Error messages for agreeTerms checkbox -->
+            <div *ngIf="registerForm.get('agreeToTerms')?.invalid && (registerForm.get('agreeToTerms')?.dirty || registerForm.get('agreeToTerms')?.touched)"
+                 class="text-danger">
+              <div *ngIf="registerForm.get('agreeToTerms')?.errors?.['required']">You must agree to the terms and conditions.</div>
+            </div>
+          </div>
+          <div class="checkbox">
+              <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn" [disabled]="registerForm.invalid || isLoading"> 
+                    <span *ngIf="isLoading"><i class="fas fa-spinner fa-spin"></i></span>
+                    SignUp</button>
+              </div>
+              <div class="submit-error text-danger" style="font-size: small;" *ngIf="submitError">
+                  {{ submitError }}
+              </div>
+              <p>Already have an account? <a routerLink="/login">Login</a></p>
+              
+          </div>
+      </form>
+  </div>
+</div>
